@@ -1,8 +1,16 @@
 <template>
     <div class="about">
         <div class="about-content">
-            <div class="image-container">
-                <img src="../lazi-employee.jpeg" alt="Employee Image">
+            <div class="team-container">
+                <div class="image-container">
+                    <img src="../Dachi.jpeg" alt="Employee Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.founderName }}</p>
+                        <p class="position">{{ currentLanguage.founderPosition }}</p>
+                        <p class="year">{{ currentLanguage.founderYear }}</p>
+                    </div>
+                </div>
+                <!-- Space for additional team member photos -->
             </div>
             <div class="language-section">
                 <h1 class="main-title">{{ currentLanguage.aboutTitle }}</h1>
@@ -189,6 +197,19 @@ export default {
     .feature-list li::before {
         left: 1rem;
     }
+
+    .team-container {
+        justify-content: center;
+    }
+    
+    .image-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .image-container img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* Add print styles */
@@ -201,5 +222,53 @@ export default {
     .feature-list {
         background-color: transparent;
     }
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    justify-content: flex-start;
+    padding-left: 2rem;
+}
+
+.image-container {
+    text-align: left;
+    flex: 0 0 auto;
+    margin-bottom: 2rem;
+    margin-right: auto;
+}
+
+.image-container img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.image-caption {
+    margin-top: 1rem;
+}
+
+.image-caption .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.image-caption .position {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+}
+
+.image-caption .year {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 </style>

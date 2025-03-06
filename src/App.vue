@@ -48,7 +48,10 @@ export default {
                     feature2: 'გთავაზობთ კურსებს ქართულ ენაში, ლიტერატურაში, ცივილიზაციაში, თეატრში, ფანდურის, პოლიფონიური სიმღერებისა და ცეკვების კურსებს',
                     feature3: 'გთავაზობთ ფრანგულ-ქართული გაცვლების შესაძლებლობას ასოციაციების სახლის მიერ გამოყოფილი მიმღები სტრუქტურების მეშვეობით',
                     aboutText1: 'ჩვენი მიდგომა ენთუზიაზმს იწვევს: 2009 წლიდან დღემდე ჩვენ შევკრიბეთ 30 მოხალისისგან შემდგარი გუნდი ცენტრის გასაძღოლად, მათ შორის 16 მასწავლებელი, რომლებიც ყოველთვიურად 90 საათზე მეტ გაკვეთილს ატარებენ.',
-                    aboutText2: 'ჩვენ გვსურს არა მხოლოდ თანამშრომლობის გზით მხარი დავუჭიროთ საგანმანათლებლო და კულტურულ აქტივობებს, არამედ შევქმნათ შესაძლებლობები შეხვედრებისთვის და ერთად გავიზიაროთ ჩვენი საერთო ინტერესები.'
+                    aboutText2: 'ჩვენ გვსურს არა მხოლოდ თანამშრომლობის გზით მხარი დავუჭიროთ საგანმანათლებლო და კულტურულ აქტივობებს, არამედ შევქმნათ შესაძლებლობები შეხვედრებისთვის და ერთად გავიზიაროთ ჩვენი საერთო ინტერესები.',
+                    founderName: "დაჩი ჩაგანავა",
+                    founderPosition: "დამფუძნებელი",
+                    founderYear: "2009 წლიდან"
                 },
                 french: {
                     home: 'Accueil',
@@ -66,7 +69,10 @@ export default {
                     feature2: 'Propose des cours de langue, littérature, civilisation géorgienne, théâtre, cours de fandouri, chants polyphoniques et danses',
                     feature3: 'Offre la possibilité d\'échanges franco-géorgien à travers les structures d\'accueil mises à sa disposition par la maison des associations',
                     aboutText1: 'Notre démarche suscite l\'enthousiasme : de 2009 à nos jours, nous avons réuni une équipe de 30 bénévoles pour animer le centre, dont 16 professeurs totalisant plus de 90 heures de cours chaque mois.',
-                    aboutText2: 'Nous souhaitons non seulement grâce à la coopération soutenir des activités éducatives et culturelles, mais également créer des occasions de nous rencontrer et partager ensemble nos intérêts communs.'
+                    aboutText2: 'Nous souhaitons non seulement grâce à la coopération soutenir des activités éducatives et culturelles, mais également créer des occasions de nous rencontrer et partager ensemble nos intérêts communs.',
+                    founderName: "Dachi Chaganava",
+                    founderPosition: "Fondateur",
+                    founderYear: "Depuis 2009"
                 }
             }
         }
