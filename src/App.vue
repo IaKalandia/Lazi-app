@@ -4,7 +4,12 @@
         <nav class="navigation">
             <div class="nav-container">
                 <div class="nav-links">
-                    <button @click="navigateTo('about')">{{ currentLanguage.about }}</button>
+                    <router-link to="/" custom v-slot="{ navigate }">
+                        <button @click="navigate">{{ currentLanguage.home }}</button>
+                    </router-link>
+                    <router-link to="/about" custom v-slot="{ navigate }">
+                        <button @click="navigate">{{ currentLanguage.about }}</button>
+                    </router-link>
                     <button @click="navigateTo('activities')">{{ currentLanguage.activities }}</button>
                     <button @click="navigateTo('registration')">{{ currentLanguage.registration }}</button>
                     <button @click="navigateTo('contact')">{{ currentLanguage.contact }}</button>
@@ -15,15 +20,8 @@
             </div>
         </nav>
 
-        <!-- Hero section -->
-        <div class="hero-section">
-            <h1>{{ currentLanguage.title }}</h1>
-            <p class="subtitle">{{ currentLanguage.subtitle }}</p>
-        </div>
-
-        <div class="image-container">
-            <img src="./lazi.jpeg" alt="School Image">
-        </div>
+        <!-- Only router-view here -->
+        <router-view :currentLanguage="currentLanguage"></router-view>
     </div>
 </template>
 
@@ -35,20 +33,40 @@ export default {
             isGeorgian: true,
             translations: {
                 georgian: {
+                    home: 'მთავარი',
                     about: 'ჩვენს შესახებ',
                     activities: 'აქტივობები',
                     registration: 'რეგისტრაცია',
                     contact: 'კონტაქტი',
                     title: 'ქართული კულტურის ცენტრი "ლაზი" პარიზში',
-                    subtitle: 'ქართული კულტურის შენარჩუნება და გაზიარება'
+                    subtitle: 'ქართული კულტურის შენარჩუნება და გაზიარება',
+                    aboutTitle: 'ქართული კულტურის ცენტრი "ლაზი"',
+                    aboutSubtitle: 'კულტურის მეშვეობით გაცვლისა და ინტეგრაციის სივრცე',
+                    aboutIntro: '2009 წლის ნოემბრიდან ჩვენ ვიკრიბებით პარიზის მე-18 უბნის გულში და ხელს ვუწყობთ კულტურული ღონისძიებების, ენის კურსებისა და მხატვრული გამოხატვის საშუალებით თემთაშორის კავშირებს.',
+                    centerTitle: 'ქართული კულტურის ცენტრი "ლაზი"',
+                    feature1: 'რეგულარულად აწყობს მრავალ კულტურულ ღონისძიებას: გამოფენებს, კონცერტებს, წარმოდგენებს, კონფერენციებს, სადისკუსიო საღამოებს',
+                    feature2: 'გთავაზობთ კურსებს ქართულ ენაში, ლიტერატურაში, ცივილიზაციაში, თეატრში, ფანდურის, პოლიფონიური სიმღერებისა და ცეკვების კურსებს',
+                    feature3: 'გთავაზობთ ფრანგულ-ქართული გაცვლების შესაძლებლობას ასოციაციების სახლის მიერ გამოყოფილი მიმღები სტრუქტურების მეშვეობით',
+                    aboutText1: 'ჩვენი მიდგომა ენთუზიაზმს იწვევს: 2009 წლიდან დღემდე ჩვენ შევკრიბეთ 30 მოხალისისგან შემდგარი გუნდი ცენტრის გასაძღოლად, მათ შორის 16 მასწავლებელი, რომლებიც ყოველთვიურად 90 საათზე მეტ გაკვეთილს ატარებენ.',
+                    aboutText2: 'ჩვენ გვსურს არა მხოლოდ თანამშრომლობის გზით მხარი დავუჭიროთ საგანმანათლებლო და კულტურულ აქტივობებს, არამედ შევქმნათ შესაძლებლობები შეხვედრებისთვის და ერთად გავიზიაროთ ჩვენი საერთო ინტერესები.'
                 },
                 french: {
+                    home: 'Accueil',
                     about: 'À Propos',
                     activities: 'Activités',
                     registration: 'Inscription',
                     contact: 'Contact',
                     title: 'Centre Culturel Géorgien à Paris',
-                    subtitle: 'Préserver et Partager la Culture Géorgienne'
+                    subtitle: 'Préserver et Partager la Culture Géorgienne',
+                    aboutTitle: 'Le Centre Culturel Géorgien Lazi',
+                    aboutSubtitle: 'Un espace d\'échange et d\'intégration par le biais de la culture',
+                    aboutIntro: 'Depuis novembre 2009, nous nous réunissons au cœur du 18ème arrondissement et favorisons par le biais de manifestations culturelles, cours de langue ou expression artistique les liens inter communautaires.',
+                    centerTitle: 'Le Centre Culturel Géorgien LAZI',
+                    feature1: 'Organise régulièrement de nombreuses manifestations culturelles : expositions, concerts, spectacles, conférences, soirées de débats',
+                    feature2: 'Propose des cours de langue, littérature, civilisation géorgienne, théâtre, cours de fandouri, chants polyphoniques et danses',
+                    feature3: 'Offre la possibilité d\'échanges franco-géorgien à travers les structures d\'accueil mises à sa disposition par la maison des associations',
+                    aboutText1: 'Notre démarche suscite l\'enthousiasme : de 2009 à nos jours, nous avons réuni une équipe de 30 bénévoles pour animer le centre, dont 16 professeurs totalisant plus de 90 heures de cours chaque mois.',
+                    aboutText2: 'Nous souhaitons non seulement grâce à la coopération soutenir des activités éducatives et culturelles, mais également créer des occasions de nous rencontrer et partager ensemble nos intérêts communs.'
                 }
             }
         }
