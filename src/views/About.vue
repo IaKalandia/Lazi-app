@@ -1,12 +1,20 @@
 <template>
     <div class="about">
         <div class="about-content">
+            <!-- Main title and subtitle first -->
+            <div class="header-section">
+                <h1 class="main-title">{{ currentLanguage.aboutTitle }}</h1>
+                <h2 class="subtitle">{{ currentLanguage.aboutSubtitle }}</h2>
+            </div>
+
+            <!-- Team members section after the title -->
             <div class="team-container">
                 <div class="image-container">
                     <img src="../Dachi.jpeg" alt="Founder Image">
                     <div class="image-caption">
                         <p class="name">{{ currentLanguage.founderName }}</p>
                         <p class="position">{{ currentLanguage.founderPosition }}</p>
+                        <p class="position">{{ currentLanguage.founderPosition1 }}</p>
                         <p class="year">{{ currentLanguage.founderYear }}</p>
                     </div>
                 </div>
@@ -21,10 +29,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Main content section -->
             <div class="language-section">
-                <h1 class="main-title">{{ currentLanguage.aboutTitle }}</h1>
-                <h2 class="subtitle">{{ currentLanguage.aboutSubtitle }}</h2>
-                
                 <p class="content-text">{{ currentLanguage.aboutIntro }}</p>
                 
                 <h3 class="section-title">{{ currentLanguage.centerTitle }}</h3>
@@ -236,10 +243,10 @@ export default {
 .team-container {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding-left: 2rem;
-    align-items: flex-start;
+    gap: 4rem;             /* Increased gap between photos */
+    margin-bottom: 4rem;   /* More space before content */
+    justify-content: center; /* Center the photos */
+    padding: 0;
 }
 
 .image-container {
@@ -277,5 +284,13 @@ export default {
     font-size: 1rem;
     color: var(--text-color);
     opacity: 0.8;
+}
+
+/* Add this new section */
+.header-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
 }
 </style>
