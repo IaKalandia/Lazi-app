@@ -8,7 +8,7 @@
 
         <!-- Image section -->
         <div class="image-container">
-            <img src="../lazi.jpeg" alt="Lazi Cultural Center">
+            <img src="../Photos/lazi.jpeg" alt="Lazi Cultural Center">
         </div>
     </div>
 </template>

@@ -1,16 +1,10 @@
 <template>
     <div class="about">
         <div class="about-content">
-            <!-- Main title and subtitle first -->
-            <div class="header-section">
-                <h1 class="main-title">{{ currentLanguage.aboutTitle }}</h1>
-                <h2 class="subtitle">{{ currentLanguage.aboutSubtitle }}</h2>
-            </div>
-
-            <!-- Team members section after the title -->
+            <!-- Team members section first -->
             <div class="team-container">
                 <div class="image-container">
-                    <img src="../Dachi.jpeg" alt="Founder Image">
+                    <img src="../Photos/Dachi.jpeg" alt="Founder Image">
                     <div class="image-caption">
                         <p class="name">{{ currentLanguage.founderName }}</p>
                         <p class="position">{{ currentLanguage.founderPosition }}</p>
@@ -19,7 +13,7 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="../Eka-Bodokia.jpeg" alt="Co-founder Image">
+                    <img src="../Photos/Eka-Bodokia.jpeg" alt="Co-founder Image">
                     <div class="image-caption">
                         <p class="name">{{ currentLanguage.cofounderName }}</p>
                         <p class="position">{{ currentLanguage.cofounderPosition1 }}</p>
@@ -28,6 +22,73 @@
                         <p class="year">{{ currentLanguage.cofounderYear }}</p>
                     </div>
                 </div>
+                <div class="image-container">
+                    <img src="../Photos/Nana-Palavandishvili.jpeg" alt="Co-founder Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.nanaPName }}</p>
+                        <p class="position">{{ currentLanguage.nanaPPosition1 }}</p>
+                        <p class="position">{{ currentLanguage.nanaPPosition2 }}</p>
+                        <p class="position">{{ currentLanguage.nanaPPosition3 }}</p>
+                        <p class="year">{{ currentLanguage.nanaPYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Alexandre-Chauchidze.jpeg" alt="Music Teacher Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.alexandreCName }}</p>
+                        <p class="position">{{ currentLanguage.alexandreCPosition1 }}</p>
+                        <p class="position">{{ currentLanguage.alexandreCPosition2 }}</p>
+                        <p class="year">{{ currentLanguage.alexandreCYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Irakli-Oboladze.jpeg" alt="Team Member Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.irakliOName }}</p>
+                        <p class="position">{{ currentLanguage.irakliOPosition }}</p>
+                        <p class="year">{{ currentLanguage.irakliOYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Sandro-Sherozia.jpeg" alt="Technical Director Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.sandroSName }}</p>
+                        <p class="position">{{ currentLanguage.sandroSPosition }}</p>
+                        <p class="year">{{ currentLanguage.sandroSYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Tsira-Kiria.jpeg" alt="Dance Assistant Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.tsiraKName }}</p>
+                        <p class="position">{{ currentLanguage.tsiraKPosition1 }}</p>
+                        <p class="position">{{ currentLanguage.tsiraKPosition2 }}</p>
+                        <p class="year">{{ currentLanguage.tsiraKYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Nana-Kapanadze.jpeg" alt="History Teacher Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.nanaKName }}</p>
+                        <p class="position">{{ currentLanguage.nanaKPosition1 }}</p>
+                        <p class="position">{{ currentLanguage.nanaKPosition2 }}</p>
+                        <p class="year">{{ currentLanguage.nanaKYear }}</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../Photos/Beka-Noniashvili.jpeg" alt="Choreographer Image">
+                    <div class="image-caption">
+                        <p class="name">{{ currentLanguage.bekaNName }}</p>
+                        <p class="position">{{ currentLanguage.bekaNPosition }}</p>
+                        <p class="year">{{ currentLanguage.bekaNYear }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title and subtitle moved after photos -->
+            <div class="header-section">
+                <h1 class="main-title">{{ currentLanguage.aboutTitle }}</h1>
+                <h2 class="subtitle">{{ currentLanguage.aboutSubtitle }}</h2>
             </div>
 
             <!-- Main content section -->
@@ -240,57 +301,116 @@ export default {
     }
 }
 
+/* Team members container styling */
 .team-container {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;             /* Increased gap between photos */
-    margin-bottom: 4rem;   /* More space before content */
-    justify-content: center; /* Center the photos */
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 photos per row */
+    gap: 2rem;                            /* Space between photos */
+    margin-top: 3rem;        /* Add space at top */
+    margin-bottom: 0;        /* Remove bottom margin */
+    max-width: 1000px;                    /* Control max width */
+    padding: 0 1rem;
 }
 
+/* Individual team member container */
 .image-container {
-    flex: 0 0 auto;
-    width: 180px;
+    width: 100%;                          /* Take full width of grid cell */
+    max-width: 200px;                     /* Maximum size of container */
+    margin: 0 auto;                       /* Center in grid cell */
 }
 
 .image-container img {
-    width: 180px;
-    height: 180px;
+    width: 150px;                         /* Slightly smaller photos */
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin: 0 auto;                       /* Center the image */
+    display: block;                       /* Help with centering */
     border: 3px solid var(--primary-color);
 }
 
 .image-caption {
     margin-top: 1rem;
+    text-align: center;     /* Center align all text */
+    padding: 0 0.5rem;      /* Add some padding on sides */
 }
 
 .image-caption .name {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.3rem;      /* Slightly smaller font size */
+    font-weight: 700;       /* Bold weight */
     color: var(--primary-color);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;  /* Space after name */
+    line-height: 1.2;       /* Tighter line height */
+    letter-spacing: -0.01em; /* Slightly tighter letter spacing */
 }
 
 .image-caption .position {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.3rem;
+    font-size: 1rem;        /* Smaller size for positions */
+    color: var(--text-color);
+    margin-bottom: 0.25rem; /* Less space between positions */
+    line-height: 1.4;       /* Better line height for readability */
+    font-weight: 500;       /* Medium weight */
+    opacity: 0.85;          /* Slightly muted color */
 }
 
 .image-caption .year {
-    font-size: 1rem;
-    color: var(--text-color);
-    opacity: 0.8;
+    font-size: 0.9rem;      /* Smallest size for year */
+    color: var(--secondary-color);
+    margin-top: 0.5rem;     /* Space before year */
+    font-weight: 500;       /* Medium weight */
+    opacity: 0.9;           /* Slightly muted */
+    font-style: italic;     /* Italicize the year */
+}
+
+/* Add hover effect for better interactivity */
+.image-container:hover .image-caption .name {
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-caption .name {
+        font-size: 1.2rem;
+    }
+    
+    .image-caption .position {
+        font-size: 0.95rem;
+    }
+    
+    .image-caption .year {
+        font-size: 0.85rem;
+    }
+
 }
 
 /* Add this new section */
 .header-section {
     text-align: center;
+    margin-top: 4rem;        /* Add space after photos */
     margin-bottom: 3rem;
+    padding-top: 3rem;       /* Add padding above title */
     padding-bottom: 2rem;
+    border-top: 2px solid #e5e7eb;    /* Add top border */
     border-bottom: 2px solid #e5e7eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .team-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 photos per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 photos per row on small screens */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr;           /* 1 photo per row on very small screens */
+    }
 }
 </style>
