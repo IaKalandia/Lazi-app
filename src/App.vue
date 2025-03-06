@@ -51,7 +51,12 @@ export default {
                     aboutText2: 'ჩვენ გვსურს არა მხოლოდ თანამშრომლობის გზით მხარი დავუჭიროთ საგანმანათლებლო და კულტურულ აქტივობებს, არამედ შევქმნათ შესაძლებლობები შეხვედრებისთვის და ერთად გავიზიაროთ ჩვენი საერთო ინტერესები.',
                     founderName: "დაჩი ჩაგანავა",
                     founderPosition: "დამფუძნებელი",
-                    founderYear: "2009 წლიდან"
+                    founderYear: "2009 წლიდან",
+                    cofounderName: "ეკა ბოდოკია",
+                    cofounderPosition1: "დამფუძნებელი",
+                    cofounderPosition2: "ვიცე პრეზიდენტი",
+                    cofounderPosition3: "ხელმძღვანელი",
+                    cofounderYear: "2009 წლიდან",
                 },
                 french: {
                     home: 'Accueil',
@@ -72,7 +77,12 @@ export default {
                     aboutText2: 'Nous souhaitons non seulement grâce à la coopération soutenir des activités éducatives et culturelles, mais également créer des occasions de nous rencontrer et partager ensemble nos intérêts communs.',
                     founderName: "Dachi Chaganava",
                     founderPosition: "Fondateur",
-                    founderYear: "Depuis 2009"
+                    founderYear: "Depuis 2009",
+                    cofounderName: "Eka Bodokia",
+                    cofounderPosition1: "Fondatrice",
+                    cofounderPosition2: "Vice-présidente",
+                    cofounderPosition3: "Directrice",
+                    cofounderYear: "Depuis 2009",
                 }
             }
         }
