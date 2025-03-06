@@ -1,18 +1,23 @@
 <template>
     <div id="app">
-        <!-- Modern navigation bar -->
+        <!-- Navigation Bar -->
         <nav class="navigation">
             <div class="nav-container">
                 <div class="nav-links">
+                    <!-- Router links for navigation -->
                     <router-link to="/" custom v-slot="{ navigate }">
                         <button @click="navigate">{{ currentLanguage.home }}</button>
                     </router-link>
                     <router-link to="/about" custom v-slot="{ navigate }">
                         <button @click="navigate">{{ currentLanguage.about }}</button>
                     </router-link>
+                    
+                    <!-- Navigation buttons for future routes -->
                     <button @click="navigateTo('activities')">{{ currentLanguage.activities }}</button>
                     <button @click="navigateTo('registration')">{{ currentLanguage.registration }}</button>
                     <button @click="navigateTo('contact')">{{ currentLanguage.contact }}</button>
+                    
+                    <!-- Language toggle button -->
                     <button @click="toggleLanguage" class="language-toggle">
                         {{ isGeorgian ? 'FR' : 'ქართ' }}
                     </button>
@@ -20,7 +25,7 @@
             </div>
         </nav>
 
-        <!-- Only router-view here -->
+        <!-- Router View - Displays current route component -->
         <router-view :currentLanguage="currentLanguage"></router-view>
     </div>
 </template>
@@ -30,9 +35,14 @@ export default {
     name: 'App',
     data() {
         return {
+            // Language toggle state
             isGeorgian: true,
+            
+            // Multilingual content dictionary
             translations: {
                 georgian: {
+                    // Georgian translations
+                    // Navigation items
                     home: 'მთავარი',
                     about: 'ჩვენს შესახებ',
                     activities: 'აქტივობები',
@@ -86,6 +96,8 @@ export default {
                     bekaNYear: "2018 წლიდან",
                 },
                 french: {
+                    // French translations
+                    // Navigation items
                     home: 'Accueil',
                     about: 'À Propos',
                     activities: 'Activités',
@@ -141,11 +153,15 @@ export default {
             }
         }
     },
+    
+    // Computed property for current language selection
     computed: {
         currentLanguage() {
             return this.isGeorgian ? this.translations.georgian : this.translations.french
         }
     },
+    
+    // Methods for navigation and language switching
     methods: {
         navigateTo(section) {
             console.log(`Navigating to ${section}`);
@@ -158,6 +174,7 @@ export default {
 </script>
 
 <style>
+/* Global CSS Variables */
 :root {
     --primary-color: #15803d;
     --secondary-color: #166534;
@@ -165,9 +182,10 @@ export default {
     --background-color: #f0fdf4;
 }
 
-/* Add this import at the top of your style section */
+/* Custom font import */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 
+/* Global app styles */
 #app {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     color: var(--text-color);
@@ -176,6 +194,7 @@ export default {
     background-color: var(--background-color);
 }
 
+/* Navigation bar styles */
 .navigation {
     position: fixed;
     top: 0;
@@ -185,6 +204,7 @@ export default {
     z-index: 1000;
 }
 
+/* Navigation container layout */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -202,6 +222,7 @@ export default {
     letter-spacing: 1px;
 }
 
+/* Navigation buttons styling */
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -212,7 +233,6 @@ export default {
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    color: var(--text-color);
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 0.5rem;
@@ -264,6 +284,7 @@ export default {
     transform: scale(1.02);
 }
 
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -280,6 +301,7 @@ export default {
     }
 }
 
+/* Language toggle button specific styles */
 .language-toggle {
     background-color: var(--primary-color);
     color: white;
