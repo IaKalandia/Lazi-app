@@ -88,4 +88,52 @@ export default {
         font-size: 2rem;
     }
 }
+
+.main-title {
+    font-family: var(--georgian-title-font);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    letter-spacing: 0.02em;
+}
+
+.subtitle {
+    font-family: var(--georgian-decorative-font);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.01em;
+}
+
+.section-title {
+    font-family: var(--georgian-title-font);
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: var(--primary-color);
+}
+
+.content-text {
+    font-family: var(--georgian-nav-font);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .content-text {
+        font-size: 1rem;
+    }
+}
 </style>
