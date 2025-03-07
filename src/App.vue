@@ -303,8 +303,8 @@ export default {
 
 /* Language toggle button specific styles */
 .language-toggle {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: transparent;
+    color: black;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -314,7 +314,7 @@ export default {
 }
 
 .language-toggle:hover {
-    background-color: var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
 }
 </style>

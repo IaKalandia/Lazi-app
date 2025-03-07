@@ -1,5 +1,5 @@
 // Import Vue Router functions and components
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 
@@ -19,7 +19,7 @@ const routes = [
 
 // Create router instance with configuration
 const router = createRouter({
-    history: createWebHistory(),    // Use HTML5 history mode for cleaner URLs
+    history: createWebHashHistory(),    // Use HTML5 history mode for cleaner URLs
     routes                         // Routes configuration from above
 })
 
