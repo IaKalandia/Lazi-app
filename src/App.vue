@@ -1,40 +1,46 @@
 <template>
-    <div id="app">
+    <div id="app" :class="{ 'mobile-view': isMobile, 'desktop-view': !isMobile }">
         <!-- Navigation Bar -->
-        <nav class="navigation">
+        <nav class="navigation" :class="{ 'mobile-nav': isMobile }">
             <div class="nav-container">
-                <div class="nav-links">
-                    <!-- Router links for navigation -->
+                <!-- Mobile Menu Button -->
+                <button v-if="isMobile" 
+                        @click="toggleMenu" 
+                        class="menu-button">
+                    <span class="menu-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="nav-links" :class="{ 'mobile-links': isMobile, 'show': isMenuOpen }">
                     <router-link to="/" custom v-slot="{ navigate }">
-                        <button @click="navigate">{{ currentLanguage.home }}</button>
+                        <button @click="mobileNavigate(navigate)">{{ currentLanguage.home }}</button>
                     </router-link>
                     <router-link to="/about" custom v-slot="{ navigate }">
-                        <button @click="navigate">{{ currentLanguage.about }}</button>
+                        <button @click="mobileNavigate(navigate)">{{ currentLanguage.about }}</button>
                     </router-link>
                     
-                    <!-- Navigation buttons for future routes -->
-                    <button @click="navigateTo('activities')">{{ currentLanguage.activities }}</button>
-                    <button @click="navigateTo('registration')">{{ currentLanguage.registration }}</button>
-                    <button @click="navigateTo('contact')">{{ currentLanguage.contact }}</button>
-                    
-                    <!-- Language toggle button -->
-                    <button @click="toggleLanguage" class="language-toggle">
-                        {{ isGeorgian ? 'FR' : 'ქართ' }}
+                    <button @click="mobileNavigate(() => navigateTo('activities'))">
+                        {{ currentLanguage.activities }}
+                    </button>
+                    <button @click="mobileNavigate(() => navigateTo('registration'))">
+                        {{ currentLanguage.registration }}
+                    </button>
+                    <button @click="mobileNavigate(() => navigateTo('contact'))">
+                        {{ currentLanguage.contact }}
                     </button>
                 </div>
+
+                <!-- Language Toggle -->
+                <button @click="toggleLanguage" class="language-toggle">
+                    {{ isGeorgian ? 'FR' : 'ქართ' }}
+                </button>
             </div>
         </nav>
 
-        <!-- Platform info display -->
-        <div v-if="showPlatformInfo" class="platform-info">
-            <p>Browser: {{ userPlatform.browser }}</p>
-            <p>OS: {{ userPlatform.os }}</p>
-            <p>Device: {{ userPlatform.device }}</p>
-            <p>Mobile: {{ userPlatform.isMobile ? 'Yes' : 'No' }}</p>
-        </div>
-
-        <!-- Router View - Displays current route component -->
-        <router-view :currentLanguage="currentLanguage"></router-view>
+        <!-- Main Content -->
+        <main :class="{ 'mobile-content': isMobile, 'desktop-content': !isMobile }">
+            <router-view :currentLanguage="currentLanguage"></router-view>
+        </main>
     </div>
 </template>
 
@@ -43,10 +49,9 @@ export default {
     name: 'App',
     data() {
         return {
-            // Language toggle state
             isGeorgian: true,
-            
-            // Multilingual content dictionary
+            isMobile: false,
+            isMenuOpen: false,
             translations: {
                 georgian: {
                     // Georgian translations
@@ -212,7 +217,8 @@ export default {
                 os: '',
                 device: '',
                 isMobile: false
-            }
+            },
+            mobileMenuOpen: false
         }
     },
     
@@ -225,14 +231,33 @@ export default {
     
     // Methods for navigation and language switching
     methods: {
+        detectMobile() {
+            this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        },
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+        mobileNavigate(navigate) {
+            if (this.isMobile) {
+                this.isMenuOpen = false;
+            }
+            if (typeof navigate === 'function') {
+                navigate();
+            }
+        },
         navigateTo(section) {
             console.log(`Navigating to ${section}`);
         },
         toggleLanguage() {
             this.isGeorgian = !this.isGeorgian;
         },
+        toggleMobileMenu() {
+            if (this.userPlatform.isMobile) {
+                this.mobileMenuOpen = !this.mobileMenuOpen;
+            }
+        },
         detectPlatform() {
-            const userAgent = navigator.userAgent;
+            const userAgent = navigator.userAgent.toLowerCase();
             const platform = {
                 browser: '',
                 os: '',
@@ -240,39 +265,37 @@ export default {
                 isMobile: false
             };
 
+            // More accurate mobile detection
+            platform.isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+
             // Detect browser
-            if (userAgent.includes('Firefox')) {
+            if (userAgent.includes('firefox')) {
                 platform.browser = 'Firefox';
-            } else if (userAgent.includes('Chrome')) {
-                platform.browser = 'Chrome';
-            } else if (userAgent.includes('Safari')) {
-                platform.browser = 'Safari';
-            } else if (userAgent.includes('Edge')) {
+            } else if (userAgent.includes('edg')) {
                 platform.browser = 'Edge';
-            } else if (userAgent.includes('Opera')) {
-                platform.browser = 'Opera';
+            } else if (userAgent.includes('chrome')) {
+                platform.browser = 'Chrome';
+            } else if (userAgent.includes('safari')) {
+                platform.browser = 'Safari';
             }
 
-            // Detect OS
-            if (userAgent.includes('iPhone')) {
+            // Detect OS and device
+            if (userAgent.includes('iphone')) {
                 platform.os = 'iOS';
                 platform.device = 'iPhone';
-                platform.isMobile = true;
-            } else if (userAgent.includes('iPad')) {
+            } else if (userAgent.includes('ipad')) {
                 platform.os = 'iOS';
                 platform.device = 'iPad';
-                platform.isMobile = true;
-            } else if (userAgent.includes('Android')) {
+            } else if (userAgent.includes('android')) {
                 platform.os = 'Android';
                 platform.device = 'Android Device';
-                platform.isMobile = true;
-            } else if (userAgent.includes('Mac')) {
+            } else if (userAgent.includes('mac')) {
                 platform.os = 'macOS';
                 platform.device = 'Desktop';
-            } else if (userAgent.includes('Windows')) {
+            } else if (userAgent.includes('windows')) {
                 platform.os = 'Windows';
                 platform.device = 'Desktop';
-            } else if (userAgent.includes('Linux')) {
+            } else if (userAgent.includes('linux')) {
                 platform.os = 'Linux';
                 platform.device = 'Desktop';
             }
@@ -297,18 +320,20 @@ export default {
             `);
         }
     },
+    watch: {
+        // Add watcher for mobile detection
+        'userPlatform.isMobile'(newValue) {
+            if (!newValue) {
+                this.mobileMenuOpen = false;
+            }
+        }
+    },
     mounted() {
-        // Detect platform when component mounts
-        this.detectPlatform();
-
-        // Optional: Update on resize
-        window.addEventListener('resize', () => {
-            this.detectPlatform();
-        });
+        this.detectMobile();
+        window.addEventListener('resize', this.detectMobile);
     },
     beforeDestroy() {
-        // Clean up event listener
-        window.removeEventListener('resize', this.detectPlatform);
+        window.removeEventListener('resize', this.detectMobile);
     }
 }
 </script>
@@ -581,5 +606,110 @@ export default {
 
 .platform-info p {
     margin: 5px 0;
+}
+
+/* Mobile-specific styles */
+.mobile-view {
+    padding-top: 60px;
+}
+
+.mobile-nav {
+    height: 60px;
+}
+
+.mobile-nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.mobile-links {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mobile-links.show {
+    display: flex;
+}
+
+.mobile-links button {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    text-align: left;
+}
+
+.menu-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    position: relative;
+    margin: auto;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    left: 0;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
+}
+
+.mobile-content {
+    padding: 1rem;
+}
+
+/* Desktop-specific styles */
+.desktop-view .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+/* Safe area handling for mobile devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .mobile-view {
+        padding-top: calc(60px + env(safe-area-inset-top));
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0.5rem;
+    }
+
+    .mobile-links button {
+        font-size: 1.1rem;
+    }
 }
 </style>

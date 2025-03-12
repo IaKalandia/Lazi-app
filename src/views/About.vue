@@ -171,7 +171,7 @@
                             <p class="year">{{ currentLanguage.fabienMYear2 }}</p>
                         </div>
                     </div>
-                    <div class="image-container">
+            <div class="image-container">
                         <div class="image-wrapper">
                             <img src="../Photos/Tamar-Chabukidze.jpeg" alt="Theater Arts Master Image">
                         </div>
