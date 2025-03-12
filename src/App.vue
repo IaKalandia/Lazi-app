@@ -25,6 +25,14 @@
             </div>
         </nav>
 
+        <!-- Platform info display -->
+        <div v-if="showPlatformInfo" class="platform-info">
+            <p>Browser: {{ userPlatform.browser }}</p>
+            <p>OS: {{ userPlatform.os }}</p>
+            <p>Device: {{ userPlatform.device }}</p>
+            <p>Mobile: {{ userPlatform.isMobile ? 'Yes' : 'No' }}</p>
+        </div>
+
         <!-- Router View - Displays current route component -->
         <router-view :currentLanguage="currentLanguage"></router-view>
     </div>
@@ -197,6 +205,13 @@ export default {
                     tamarCPosition: "Maîtrise en art théâtral",
                     tamarCYear: "Depuis 2024",
                 }
+            },
+            showPlatformInfo: true,
+            userPlatform: {
+                browser: '',
+                os: '',
+                device: '',
+                isMobile: false
             }
         }
     },
@@ -215,7 +230,85 @@ export default {
         },
         toggleLanguage() {
             this.isGeorgian = !this.isGeorgian;
+        },
+        detectPlatform() {
+            const userAgent = navigator.userAgent;
+            const platform = {
+                browser: '',
+                os: '',
+                device: '',
+                isMobile: false
+            };
+
+            // Detect browser
+            if (userAgent.includes('Firefox')) {
+                platform.browser = 'Firefox';
+            } else if (userAgent.includes('Chrome')) {
+                platform.browser = 'Chrome';
+            } else if (userAgent.includes('Safari')) {
+                platform.browser = 'Safari';
+            } else if (userAgent.includes('Edge')) {
+                platform.browser = 'Edge';
+            } else if (userAgent.includes('Opera')) {
+                platform.browser = 'Opera';
+            }
+
+            // Detect OS
+            if (userAgent.includes('iPhone')) {
+                platform.os = 'iOS';
+                platform.device = 'iPhone';
+                platform.isMobile = true;
+            } else if (userAgent.includes('iPad')) {
+                platform.os = 'iOS';
+                platform.device = 'iPad';
+                platform.isMobile = true;
+            } else if (userAgent.includes('Android')) {
+                platform.os = 'Android';
+                platform.device = 'Android Device';
+                platform.isMobile = true;
+            } else if (userAgent.includes('Mac')) {
+                platform.os = 'macOS';
+                platform.device = 'Desktop';
+            } else if (userAgent.includes('Windows')) {
+                platform.os = 'Windows';
+                platform.device = 'Desktop';
+            } else if (userAgent.includes('Linux')) {
+                platform.os = 'Linux';
+                platform.device = 'Desktop';
+            }
+
+            this.userPlatform = platform;
+            console.log('User Platform:', platform);
+
+            // You can also send this data to your analytics or backend
+            this.logPlatformData(platform);
+        },
+
+        logPlatformData(platform) {
+            // You can implement logging or analytics here
+            console.log(`
+                Browser: ${platform.browser}
+                OS: ${platform.os}
+                Device: ${platform.device}
+                Mobile: ${platform.isMobile}
+                User Agent: ${navigator.userAgent}
+                Screen Size: ${window.innerWidth}x${window.innerHeight}
+                Language: ${navigator.language}
+            `);
         }
+    },
+    mounted() {
+        // Detect platform when component mounts
+        this.detectPlatform();
+
+        // Optional: Update on resize
+        window.addEventListener('resize', () => {
+            this.detectPlatform();
+        });
+    },
+    beforeDestroy() {
+        // Clean up event listener
+        window.removeEventListener('resize', this.detectPlatform);
     }
 }
 </script>
@@ -471,5 +564,22 @@ export default {
 .special-word {
     letter-spacing: 0.05em;
     display: inline-block;
+}
+
+/* Platform info styles */
+.platform-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+.platform-info p {
+    margin: 5px 0;
 }
 </style>
