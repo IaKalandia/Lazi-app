@@ -10,7 +10,9 @@
                 <div class="team-container">
                     <!-- Individual team member card structure (repeated for each member) -->
                     <div class="image-container">
-                        <img src="../Photos/Dachi.jpeg" alt="Founder Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Dachi.jpeg" alt="Founder Image">
+                        </div>
                         <div class="image-caption">
                             <!-- Multilingual text using currentLanguage prop -->
                             <p class="name">{{ currentLanguage.founderName }}</p>
@@ -20,7 +22,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Eka-Bodokia.jpeg" alt="Co-founder Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Eka-Bodokia.jpeg" alt="Co-founder Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.cofounderName }}</p>
                             <p class="position">{{ currentLanguage.cofounderPosition1 }}</p>
@@ -30,7 +34,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Nana-Palavandishvili.jpeg" alt="Co-founder Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Nana-Palavandishvili.jpeg" alt="Co-founder Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.nanaPName }}</p>
                             <p class="position">{{ currentLanguage.nanaPPosition1 }}</p>
@@ -40,7 +46,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Alexandre-Chauchidze.jpeg" alt="Music Teacher Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Alexandre-Chauchidze.jpeg" alt="Music Teacher Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.alexandreCName }}</p>
                             <p class="position">{{ currentLanguage.alexandreCPosition1 }}</p>
@@ -49,7 +57,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Irakli-Oboladze.jpeg" alt="Team Member Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Irakli-Oboladze.jpeg" alt="Team Member Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.irakliOName }}</p>
                             <p class="position">{{ currentLanguage.irakliOPosition }}</p>
@@ -57,7 +67,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Sandro-Sherozia.jpeg" alt="Technical Director Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Sandro-Sherozia.jpeg" alt="Technical Director Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.sandroSName }}</p>
                             <p class="position">{{ currentLanguage.sandroSPosition }}</p>
@@ -65,7 +77,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Tsira-Kiria.jpeg" alt="Dance Assistant Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Tsira-Kiria.jpeg" alt="Dance Assistant Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.tsiraKName }}</p>
                             <p class="position">{{ currentLanguage.tsiraKPosition1 }}</p>
@@ -74,7 +88,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Nana-Kapanadze.jpeg" alt="History Teacher Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Nana-Kapanadze.jpeg" alt="History Teacher Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.nanaKName }}</p>
                             <p class="position">{{ currentLanguage.nanaKPosition1 }}</p>
@@ -83,7 +99,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Beka-Noniashvili.jpeg" alt="Choreographer Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Beka-Noniashvili.jpeg" alt="Choreographer Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.bekaNName }}</p>
                             <p class="position">{{ currentLanguage.bekaNPosition }}</p>
@@ -91,7 +109,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Marina-Pashkuridze.jpeg" alt="French Teacher Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Marina-Pashkuridze.jpeg" alt="French Teacher Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.marinaPName }}</p>
                             <p class="position">{{ currentLanguage.marinaPPosition }}</p>
@@ -99,7 +119,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Ana-Jgenti.jpeg" alt="Communication Specialist Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Ana-Jgenti.jpeg" alt="Communication Specialist Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.anaJName }}</p>
                             <p class="position">{{ currentLanguage.anaJPosition1 }}</p>
@@ -108,7 +130,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Marine-Sivsiva.jpeg" alt="Class Assistant Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Marine-Sivsiva.jpeg" alt="Class Assistant Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.marineSName }}</p>
                             <p class="position">{{ currentLanguage.marineSPosition }}</p>
@@ -116,7 +140,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Salome-Kalandia.jpeg" alt="Class Assistant Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Salome-Kalandia.jpeg" alt="Class Assistant Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.salomeKName }}</p>
                             <p class="position">{{ currentLanguage.salomeKPosition }}</p>
@@ -124,7 +150,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Giorgi-Dalakishvili.jpeg" alt="Choreographer Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Giorgi-Dalakishvili.jpeg" alt="Choreographer Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.giorgiDName }}</p>
                             <p class="position">{{ currentLanguage.giorgiDPosition }}</p>
@@ -132,7 +160,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Fabien-Morne.jpeg" alt="Collaborator Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Fabien-Morne.jpeg" alt="Collaborator Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.fabienMName }}</p>
                             <p class="position">{{ currentLanguage.fabienMPosition1 }}</p>
@@ -142,7 +172,9 @@
                         </div>
                     </div>
                     <div class="image-container">
-                        <img src="../Photos/Tamar-Chabukidze.jpeg" alt="Theater Arts Master Image">
+                        <div class="image-wrapper">
+                            <img src="../Photos/Tamar-Chabukidze.jpeg" alt="Theater Arts Master Image">
+                        </div>
                         <div class="image-caption">
                             <p class="name">{{ currentLanguage.tamarCName }}</p>
                             <p class="position">{{ currentLanguage.tamarCPosition }}</p>
@@ -207,11 +239,13 @@ export default {
 /* Team grid fixes */
 .team-container {
     display: grid;
-    gap: 20px;
-    padding: 10px;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(5, 1fr);  /* Changed from 4 to 5 columns */
+    gap: 2rem;                              /* Adjusted gap for 5 columns */
+    margin: 4rem auto;
+    max-width: 1400px;                      /* Increased max-width to accommodate 5 columns */
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(240, 253, 244, 0.5), transparent);
+    border-radius: 2rem;
 }
 
 /* Responsive grid adjustments */
@@ -295,10 +329,10 @@ export default {
 /* Team grid layout styles */
 .team-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 cards per row */
-    gap: 3rem;                              /* Space between cards */
+    grid-template-columns: repeat(5, 1fr);  /* Changed from 4 to 5 columns */
+    gap: 2rem;                              /* Adjusted gap for 5 columns */
     margin: 4rem auto;
-    max-width: 1200px;
+    max-width: 1400px;                      /* Increased max-width to accommodate 5 columns */
     padding: 2rem;
     background: linear-gradient(to bottom, rgba(240, 253, 244, 0.5), transparent);
     border-radius: 2rem;
@@ -307,62 +341,68 @@ export default {
 /* Individual team member card styles */
 .image-container {
     width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+/* Image wrapper to ensure consistent centering */
+.image-wrapper {
+    width: 160px;
     margin: 0 auto;
 }
 
-/* Image styles */
 .image-container img {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid transparent;
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Caption styles */
 .image-caption {
-    margin-top: 1.5rem;
-    text-align: center;
-    padding: 1rem;
     width: 100%;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5rem;
 }
 
-/* Name styling */
+.image-caption p {
+    width: 100%;
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
 .image-caption .name {
     font-family: 'BPG Mikheil Stefane', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 0.8rem;
-    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
 }
 
-/* Position styling */
 .image-caption .position {
     font-family: 'BPG Glaho', serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.4;
-    color: var(--text-color);
-    margin: 0.3rem 0;
-    letter-spacing: 0.01em;
+    margin: 0.2rem 0;
 }
 
-/* Year styling */
 .image-caption .year {
     font-family: 'BPG Nino Mtavruli Bold', serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--secondary-color);
-    margin-top: 0.8rem;
-    letter-spacing: 0.02em;
+    margin-top: 0.3rem;
 }
 
 /* Hover effect for the entire card */
@@ -382,92 +422,26 @@ export default {
 }
 
 /* Responsive design breakpoints */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+    .team-container {
+        grid-template-columns: repeat(4, 1fr);  /* 4 cards per row */
+    }
+}
+
+@media (max-width: 1100px) {
     .team-container {
         grid-template-columns: repeat(3, 1fr);  /* 3 cards per row */
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .team-container {
         grid-template-columns: repeat(2, 1fr);  /* 2 cards per row */
-    }
-}
-
-@media (max-width: 600px) {
-    .team-container {
-        grid-template-columns: 1fr;             /* 1 card per row */
-    }
-}
-
-/* Update the main container padding for mobile */
-@media (max-width: 768px) {
-    .about {
-        padding: 4rem 1rem 2rem 1rem;
-    }
-
-    /* Adjust team container for mobile */
-    .team-container {
-        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        padding: 1rem;
-        margin: 2rem auto;
     }
 
-    /* Make images slightly smaller on mobile */
-    .image-container img {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* Adjust text sizes for mobile */
-    .image-caption {
-        margin-top: 1rem;
-        padding: 0.5rem;
-    }
-
-    .image-caption .name {
-        font-size: 1.1rem;
-    }
-
-    .image-caption .position {
-        font-size: 0.85rem;
-    }
-
-    .image-caption .year {
-        font-size: 0.8rem;
-    }
-
-    /* Adjust section titles for mobile */
-    .main-title {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1.25rem;
-    }
-
-    /* Adjust content text for mobile */
-    .content-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-
-    .feature-list li {
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-        padding-left: 1rem;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-    .team-container {
-        grid-template-columns: 1fr;  /* Single column for very small screens */
-    }
-
-    .image-container {
-        max-width: 200px;
+    .image-wrapper {
+        width: 140px;
     }
 
     .image-container img {
@@ -480,11 +454,26 @@ export default {
     }
 
     .image-caption .position {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     .image-caption .year {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        gap: 1rem;
+    }
+
+    .image-wrapper {
+        width: 120px;
+    }
+
+    .image-container img {
+        width: 120px;
+        height: 120px;
     }
 }
 
