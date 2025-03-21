@@ -9,7 +9,6 @@
                         class="menu-button">
                     <span class="menu-icon"></span>
                 </button>
-
                 <!-- Navigation Links -->
                 <div class="nav-links" :class="{ 'mobile-links': isMobile, 'show': isMenuOpen }">
                     <router-link to="/" custom v-slot="{ navigate }">
