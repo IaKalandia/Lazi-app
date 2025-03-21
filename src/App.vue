@@ -5,11 +5,10 @@
             <div class="nav-container">
                 <!-- Mobile Menu Button -->
                 <button v-if="isMobile" 
-                        @click="toggleMenu2" 
+                        @click="toggleMenu" 
                         class="menu-button">
                     <span class="menu-icon"></span>
                 </button>
-'
                 <!-- Navigation Links -->
                 <div class="nav-links" :class="{ 'mobile-links': isMobile, 'show': isMenuOpen }">
                     <router-link to="/" custom v-slot="{ navigate }">
