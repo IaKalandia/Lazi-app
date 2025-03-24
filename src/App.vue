@@ -126,9 +126,7 @@ export default {
                     fabienMYear1: "2011 წლიდან",
                     fabienMPosition2: "ფანდურის მასწავლებელი",
                     fabienMYear2: "2024 წლიდან",
-                    tamarCName: "თამარი ჭაბუკიძე",
-                    tamarCPosition: "თეატრალური ხელოვნების ოსტატობა",
-                    tamarCYear: "2024 წლიდან",
+                    
                 },
                 french: {
                     // French translations
