@@ -203,9 +203,7 @@ export default {
                     fabienMYear1: "Depuis 2011",
                     fabienMPosition2: "Professeur de Panduri",
                     fabienMYear2: "Depuis 2024",
-                    tamarCName: "Tamari Chabukidze",
-                    tamarCPosition: "Maîtrise en art théâtral",
-                    tamarCYear: "Depuis 2024",
+                    
                 }
             },
             showPlatformInfo: true,
